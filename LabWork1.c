@@ -226,7 +226,7 @@ return(flag);
 }
 
 int checkmultifloat(int a,int b,void *arr){
-    int flag=0;
+    int flag=1;
 if(fabs(*((float*)arr)-396)>e)flag=0;
 return(flag);
 }
