@@ -226,13 +226,13 @@ return(flag);
 
 int checkmultifloat(int a,int b,void *arr){
     int flag=0;
-if(*((float*)arr)==396)flag=1;
+if(fabs(*((float*)arr)-396)>0,0000001)flag=0;
 return(flag);
 }
 
 int checkmulticomplex(int a,int b,void *arr){
     int flag=0;
-if(crealf(*((float complex*)arr))==-8980 & cimagf(*((float complex*)arr))==6200)flag=1;
+if(fabs(crealf(*((float complex*)arr))+8980)>0,0000001 | fabs(cimagf(*((float complex*)arr))-6200)>0,0000001)flag=0;
 return(flag);
 }
 
