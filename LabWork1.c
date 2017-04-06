@@ -29,7 +29,7 @@ readint(int a,int b, void *arr){
     int i,j;
     for(i=0;i<b;i++)
     for(j=0;j<a;j++){
-        printf("Ââåäèòå %d êîîğäèíàòó %d âåêòîğà\n",j+1,i+1);
+        printf("Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ %d ĞºĞ¾Ğ¾Ñ€Ğ´Ğ¸Ğ½Ğ°Ñ‚Ñƒ %d Ğ²ĞµĞºÑ‚Ğ¾Ñ€Ğ°\n",j+1,i+1);
         scanf("%d",(int*)arr+j+a*(i));
     }
 }
@@ -38,7 +38,7 @@ readfloat(int a,int b,void *arr){
     int i,j;
     for(i=0;i<b;i++)
     for(j=0;j<a;j++){
-        printf("Ââåäèòå %d êîîğäèíàòó %d âåêòîğà\n",j+1,i+1);
+        printf("Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ %d ĞºĞ¾Ğ¾Ñ€Ğ´Ğ¸Ğ½Ğ°Ñ‚Ñƒ %d Ğ²ĞµĞºÑ‚Ğ¾Ñ€Ğ°\n",j+1,i+1);
         scanf("%f",(float*)arr+j+a*(i));
     }
 }
@@ -47,9 +47,9 @@ readcomplex(int a,int b,void *arr){
     int i,j;float x,y;
     for(i=0;i<b;i++)
     for(j=0;j<a;j++){
-        printf("Ââåäèòå %d äåéñòâèòåëüíóş êîîğäèíàòó %d âåêòîğà\n",j+1,i+1);
+        printf("Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ %d Ğ´ĞµĞ¹ÑÑ‚Ğ²Ğ¸Ñ‚ĞµĞ»ÑŒĞ½ÑƒÑ ĞºĞ¾Ğ¾Ñ€Ğ´Ğ¸Ğ½Ğ°Ñ‚Ñƒ %d Ğ²ĞµĞºÑ‚Ğ¾Ñ€Ğ°\n",j+1,i+1);
         scanf("%f",&x);
-        printf("Ââåäèòå %d ìíèìóş êîîğäèíàòó %d âåêòîğà\n",j+1,i+1);
+        printf("Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ %d Ğ¼Ğ½Ğ¸Ğ¼ÑƒÑ ĞºĞ¾Ğ¾Ñ€Ğ´Ğ¸Ğ½Ğ°Ñ‚Ñƒ %d Ğ²ĞµĞºÑ‚Ğ¾Ñ€Ğ°\n",j+1,i+1);
         scanf("%f",&y);
         *((float complex*)arr+j+a*i)=x+y*I;
     }
@@ -95,7 +95,7 @@ multiplyint(int a,int b,void *arr){
 int i,j;
  for(i=0;i<a;i++){*((int*)arr+i+a*b)=1;
     for(j=0;j<b;j++){
-    *((int*)arr+i+a*b)*=*((int*)arr+i+a*(j+1));
+    *((int*)arr+i+a*b)*=*((int*)arr+i+a*(j));
     }};
     *((int*)arr)=0;
     for(i=0;i<a;i++)
@@ -132,7 +132,7 @@ if(c==3)multiplycomplex(a,b,arr);
 
 printintsum(int a,int b,void *arr){
     int i;
-    printf("Êîîğäèíàòû íîâîãî âåêòîğà (%d",*((int*)arr+a*b));
+    printf("ĞšĞ¾Ğ¾Ñ€Ğ´Ğ¸Ğ½Ğ°Ñ‚Ñ‹ Ğ½Ğ¾Ğ²Ğ¾Ğ³Ğ¾ Ğ²ĞµĞºÑ‚Ğ¾Ñ€Ğ° (%d",*((int*)arr+a*b));
     for(i=1;i<a;i++)
             printf(",%d",*((int*)arr+a*b+i));
     printf(")");
@@ -140,7 +140,7 @@ printintsum(int a,int b,void *arr){
 
 printfloatsum(int a,int b,void *arr){
     int i;
-    printf("Êîîğäèíàòû íîâîãî âåêòîğà (%.2f",*((float*)arr+a*b));
+    printf("ĞšĞ¾Ğ¾Ñ€Ğ´Ğ¸Ğ½Ğ°Ñ‚Ñ‹ Ğ½Ğ¾Ğ²Ğ¾Ğ³Ğ¾ Ğ²ĞµĞºÑ‚Ğ¾Ñ€Ğ° (%.2f",*((float*)arr+a*b));
     for(i=1;i<a;i++)
             printf(",%.2f",*((float*)arr+a*b+i));
     printf(")");
@@ -148,22 +148,22 @@ printfloatsum(int a,int b,void *arr){
 
 printcomplexsum(int a,int b,void *arr){
     int i;
-    printf("Êîîğäèíàòû íîâîãî âåêòîğà (%.2f + %.2fi",crealf(*((float complex*)arr+a*b)),cimagf(*((float complex*)arr+a*b)));
+    printf("ĞšĞ¾Ğ¾Ñ€Ğ´Ğ¸Ğ½Ğ°Ñ‚Ñ‹ Ğ½Ğ¾Ğ²Ğ¾Ğ³Ğ¾ Ğ²ĞµĞºÑ‚Ğ¾Ñ€Ğ° (%.2f + %.2fi",crealf(*((float complex*)arr+a*b)),cimagf(*((float complex*)arr+a*b)));
     for(i=1;i<a;i++)
             printf(",%.2f + %.2fi",crealf(*((float complex*)arr+a*b+i)),cimagf(*((float complex*)arr+a*b+i)));
     printf(")");
 }
 
 printintmulti(int a,int b,void *arr){
-printf("Ñêàëÿğíîå ïğîèçâåäåíèå ğàâíî = %d",*((int*)arr));
+printf("Ğ¡ĞºĞ°Ğ»ÑÑ€Ğ½Ğ¾Ğµ Ğ¿Ñ€Ğ¾Ğ¸Ğ·Ğ²ĞµĞ´ĞµĞ½Ğ¸Ğµ Ñ€Ğ°Ğ²Ğ½Ğ¾ = %d",*((int*)arr));
 }
 
 printfloatmulti(int a,int b,void *arr){
-printf("Ñêàëÿğíîå ïğîèçâåäåíèå ğàâíî = %.2f",*((float*)arr));
+printf("Ğ¡ĞºĞ°Ğ»ÑÑ€Ğ½Ğ¾Ğµ Ğ¿Ñ€Ğ¾Ğ¸Ğ·Ğ²ĞµĞ´ĞµĞ½Ğ¸Ğµ Ñ€Ğ°Ğ²Ğ½Ğ¾ = %.2f",*((float*)arr));
 }
 
 printcomplexmulti(int a,int b,void *arr){
-printf("Ñêàëÿğíîå ïğîèçâåäåíèå ğàâíî = %.2f + %.2fi",crealf(*((float complex*)arr)),cimagf(*((float complex*)arr)));
+printf("Ğ¡ĞºĞ°Ğ»ÑÑ€Ğ½Ğ¾Ğµ Ğ¿Ñ€Ğ¾Ğ¸Ğ·Ğ²ĞµĞ´ĞµĞ½Ğ¸Ğµ Ñ€Ğ°Ğ²Ğ½Ğ¾ = %.2f + %.2fi",crealf(*((float complex*)arr)),cimagf(*((float complex*)arr)));
 }
 
 print(int a,int b,int c,int d,void *arr){
@@ -273,13 +273,13 @@ int main(){
     setlocale( 0,"Russian" );
     void *arr;
     int a,b,c,d;
-    printf("Ââåäèòå, ÷òî õîòèòå ñäåëàòü ñ âåêòîğàìè\n1.Ñêëàäûâàòü\n2.Ñêàëÿğíî óìíîæàòü\n3.Òåñòèğîâàòü ïğîãğàììó\n");
+    printf("Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ, Ñ‡Ñ‚Ğ¾ Ñ…Ğ¾Ñ‚Ğ¸Ñ‚Ğµ ÑĞ´ĞµĞ»Ğ°Ñ‚ÑŒ Ñ Ğ²ĞµĞºÑ‚Ğ¾Ñ€Ğ°Ğ¼Ğ¸\n1.Ğ¡ĞºĞ»Ğ°Ğ´Ñ‹Ğ²Ğ°Ñ‚ÑŒ\n2.Ğ¡ĞºĞ°Ğ»ÑÑ€Ğ½Ğ¾ ÑƒĞ¼Ğ½Ğ¾Ğ¶Ğ°Ñ‚ÑŒ\n3.Ğ¢ĞµÑÑ‚Ğ¸Ñ€Ğ¾Ğ²Ğ°Ñ‚ÑŒ Ğ¿Ñ€Ğ¾Ğ³Ñ€Ğ°Ğ¼Ğ¼Ñƒ\n");
     scanf("%d",&d);
-    printf("Ââåäèòå êîëè÷åñòâî êîîğäèíàò âåêòîğà(Äëÿ òåñòà êîëè÷åñòâî ôèêñèğîâàíî è ğàâíî 4)");
+    printf("Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ ĞºĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ ĞºĞ¾Ğ¾Ñ€Ğ´Ğ¸Ğ½Ğ°Ñ‚ Ğ²ĞµĞºÑ‚Ğ¾Ñ€Ğ°(Ğ”Ğ»Ñ Ñ‚ĞµÑÑ‚Ğ° ĞºĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ Ñ„Ğ¸ĞºÑĞ¸Ñ€Ğ¾Ğ²Ğ°Ğ½Ğ¾ Ğ¸ Ñ€Ğ°Ğ²Ğ½Ğ¾ 4)");
     scanf("%d",&a);
-    printf("Ââåäèòå êîëè÷åñòâî âåêòîğîâ(Äëÿ òåñòà êîëè÷åñòâî ôèêñèğîâàíî è ğàâíî 3)\n");
+    printf("Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ ĞºĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ Ğ²ĞµĞºÑ‚Ğ¾Ñ€Ğ¾Ğ²(Ğ”Ğ»Ñ Ñ‚ĞµÑÑ‚Ğ° ĞºĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ Ñ„Ğ¸ĞºÑĞ¸Ñ€Ğ¾Ğ²Ğ°Ğ½Ğ¾ Ğ¸ Ñ€Ğ°Ğ²Ğ½Ğ¾ 3)\n");
     scanf("%d",&b);
-    printf("Ââåäèòå òèï äàííûõ âåêòîğîâ\n1.Öåëûå ÷èñëà\n2.Âåùåñòâåííûå ÷èñëà\n3.Êîìïëåêñíûå ÷èñëà\n");
+    printf("Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ñ‚Ğ¸Ğ¿ Ğ´Ğ°Ğ½Ğ½Ñ‹Ñ… Ğ²ĞµĞºÑ‚Ğ¾Ñ€Ğ¾Ğ²\n1.Ğ¦ĞµĞ»Ñ‹Ğµ Ñ‡Ğ¸ÑĞ»Ğ°\n2.Ğ’ĞµÑ‰ĞµÑÑ‚Ğ²ĞµĞ½Ğ½Ñ‹Ğµ Ñ‡Ğ¸ÑĞ»Ğ°\n3.ĞšĞ¾Ğ¼Ğ¿Ğ»ĞµĞºÑĞ½Ñ‹Ğµ Ñ‡Ğ¸ÑĞ»Ğ°\n");
     scanf("%d",&c);
     if(d==3){a=4;b=3;}
     arr=create(a,b,c);
