@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <complex.h>
+const float e=0,0000000001;
 void *createint(int a,int b){
 void *arr;
 arr=malloc((a)*(b+1)*sizeof(int));
@@ -226,13 +227,13 @@ return(flag);
 
 int checkmultifloat(int a,int b,void *arr){
     int flag=0;
-if(fabs(*((float*)arr)-396)>0,0000001)flag=0;
+if(fabs(*((float*)arr)-396)>e)flag=0;
 return(flag);
 }
 
 int checkmulticomplex(int a,int b,void *arr){
     int flag=0;
-if(fabs(crealf(*((float complex*)arr))+8980)>0,0000001 | fabs(cimagf(*((float complex*)arr))-6200)>0,0000001)flag=0;
+if(fabs(crealf(*((float complex*)arr))+8980)>e | fabs(cimagf(*((float complex*)arr))-6200)>e)flag=0;
 return(flag);
 }
 
@@ -249,17 +250,17 @@ return(flag);
 }
 
 int checksumfloat(int a,int b,void *arr){
-    int flag=0;
-if((*((float*)arr+a*b+0)==12) & (*((float*)arr+a*b+1)==15) & (*((float*)arr+a*b+2)==18) & (*((float*)arr+a*b+3)==21))flag=1;
+    int flag=1;
+if((*((float*)arr+a*b+0)-12)>e | (*((float*)arr+a*b+1)-15)>e | (*((float*)arr+a*b+2)-18)>e | (*((float*)arr+a*b+3)-21)>e)flag=0;
 return(flag);
 }
 
 int checksumcomplex(int a,int b,void *arr){
-    int flag=0;
-if(crealf(*((float complex*)arr+a*b+0))==24 & cimagf(*((float complex*)arr+a*b+0))==27 &
-   crealf(*((float complex*)arr+a*b+1))==30 & cimagf(*((float complex*)arr+a*b+1))==33 &
-    crealf(*((float complex*)arr+a*b+2))==36 & cimagf(*((float complex*)arr+a*b+2))==39 &
-    crealf(*((float complex*)arr+a*b+3))==42 & cimagf(*((float complex*)arr+a*b+3))==45)flag=1;
+    int flag=1;
+if(crealf((*((float complex*)arr+a*b+0))-24)>e | (cimagf(*((float complex*)arr+a*b+0))-27)>e |
+   (crealf(*((float complex*)arr+a*b+1))-30)>e | (cimagf(*((float complex*)arr+a*b+1))-33)>e |
+    (crealf(*((float complex*)arr+a*b+2))-36)>e | (cimagf(*((float complex*)arr+a*b+2))-39)>e |
+    (crealf(*((float complex*)arr+a*b+3))-42)>e | (cimagf(*((float complex*)arr+a*b+3))-45)>e)flag=0;
 return(flag);
 }
 
